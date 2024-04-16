@@ -1,0 +1,12 @@
+<pizzas>
+    <pizza nombre="Barbacoa" precio="8">
+        <ingrediente nombre="Ternera Picada"/>
+        <ingrediente nombre="tomate"/>
+        <ingrediente nombre="Salsa Barbacoa"/>
+        <ingrediente nombre="Bacon"/>
+    </pizza>
+    <pizza nombre="Margarita" precio="7">
+        <ingrediente nombre="Mozzarella"/>
+        <ingrediente nombre="tomate"/>
+    </pizza>
+</pizzas>
