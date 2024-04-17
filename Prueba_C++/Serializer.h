@@ -57,7 +57,7 @@ public:
         }
         
         xml.SaveFile(xmlPath);
-        std::cout << "XML guardado con exito" << std::endl;
+        std::cout << "\nXML correctly saved at: " << xmlPath << std::endl;
         
     }
 

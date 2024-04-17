@@ -4,11 +4,6 @@
 
 using namespace tinyxml2;
 
-class datos {
-
-};
-
-
 //converts XML data to normal text
 
 int main()
