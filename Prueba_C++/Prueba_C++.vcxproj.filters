@@ -21,14 +21,23 @@
     <ClCompile Include="..\..\..\..\Downloads\tinyxml2-master\tinyxml2-master\tinyxml2.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Serializer.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Downloads\tinyxml2-master\tinyxml2-master\tinyxml2.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Serializer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="..\ejemplo.xml">
+    <Xml Include="ejemplo.xml">
       <Filter>Archivos de origen</Filter>
     </Xml>
   </ItemGroup>
