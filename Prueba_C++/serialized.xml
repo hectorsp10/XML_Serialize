@@ -1,3 +1,7 @@
-<coche>
-    <rueda/>
-</coche>
+<Pizzas>
+    <Pizza Name="carbonara" Price="5">
+        <Ingredient name="comino"/>
+        <Ingredient name="nata"/>
+        <Ingredient name="bacon"/>
+    </Pizza>
+</Pizzas>

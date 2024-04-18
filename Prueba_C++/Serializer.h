@@ -1,6 +1,10 @@
 #include "tinyxml2.h"
+#include "Data.h"
 #include <iostream>
+#include <list>
+#include <string>
 
+using namespace std;
 using namespace tinyxml2;
 
 #pragma once
@@ -12,7 +16,7 @@ public:
         XMLDocument doc;
         if (doc.LoadFile(xmlPath) == XML_SUCCESS) {
             XMLElement* raiz = doc.RootElement();
-            std::cout << "success\n";
+            cout << "success\n";
             if (raiz) {
                 for (XMLElement* pizza = raiz->FirstChildElement("pizza"); pizza; pizza = pizza->NextSiblingElement("pizza")) {
 
@@ -20,42 +24,52 @@ public:
                     const char* precioPizza = pizza->Attribute("precio");
 
                     if (nombrePizza && precioPizza) {
-                        std::cout << "Pizza: " << nombrePizza << ", Precio: " << precioPizza << std::endl;
+                        cout << "Pizza: " << nombrePizza << ", Precio: " << precioPizza << endl;
 
                         for (XMLElement* ingrediente = pizza->FirstChildElement("ingrediente"); ingrediente; ingrediente = ingrediente->NextSiblingElement("ingrediente")) {
 
                             const char* nombreIngrediente = ingrediente->Attribute("nombre");
 
                             if (nombreIngrediente) {
-                                std::cout << "Ingrediente: " << nombreIngrediente << std::endl;
+                                cout << "Ingrediente: " << nombreIngrediente << endl;
                             }
                             else {
-                                std::cout << "Ingrediente no encontrado" << std::endl;
+                                cout << "Ingrediente no encontrado" << endl;
                             }
                         }
                     }
                     else {
-                        std::cout << "Pizza no encontrada" << std::endl;
+                        cout << "Pizza no encontrada" << endl;
                     }
                 }
             }
         }
     }
-
-    void serializeData(const char* xmlPath, const char* root, const char* element) {
+   
+    void serializeData(const char* xmlPath, const char* name, const char* price, list<const char*> ingredients) {
         
         XMLDocument xml;
-        if (root){
-            XMLNode* raiz = xml.NewElement(root);
-            xml.InsertFirstChild(raiz);
-
-            if (element) {
-                XMLElement* elem = xml.NewElement(element);
-                raiz->InsertEndChild(elem);
-            }
-
-        }
         
+        XMLNode* raiz = xml.NewElement("Pizzas");
+        xml.InsertFirstChild(raiz);
+
+        XMLElement* pizza = xml.NewElement("Pizza");
+        raiz->InsertEndChild(pizza);
+       
+        pizza->SetAttribute("Name", name);        
+        pizza->SetAttribute("Price", price);
+
+        for (const char* ingredient : ingredients) {
+            XMLElement* ingred = xml.NewElement("Ingredient");
+            pizza->InsertEndChild(ingred);
+            
+            ingred->SetAttribute("name", ingredient);
+        }
+
+        Data data;
+        data.addPizza("carbonara", "5", { "comino", "nata", "bacon" });
+        data.showData();
+      
         xml.SaveFile(xmlPath);
         std::cout << "\nXML correctly saved at: " << xmlPath << std::endl;
         

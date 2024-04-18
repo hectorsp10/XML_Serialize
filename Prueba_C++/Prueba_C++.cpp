@@ -1,4 +1,5 @@
 #include "tinyxml2.h"
+#include "Data.h"
 #include <iostream>
 #include "Serializer.h"
 
@@ -15,9 +16,10 @@ int main()
     serializer.deSerializeData(xmlPath);
 
     Serializer serializer2;
-    serializer2.serializeData(xml2Path, "coche", "rueda");
+    serializer2.serializeData(xml2Path, "carbonara", "5", { "comino", "nata", "bacon" });
 
     return 0;
 }
 
 
+    

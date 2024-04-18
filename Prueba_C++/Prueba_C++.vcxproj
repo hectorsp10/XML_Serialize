@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Downloads\tinyxml2-master\tinyxml2-master\tinyxml2.h" />
+    <ClInclude Include="Data.h" />
     <ClInclude Include="Serializer.h" />
   </ItemGroup>
   <ItemGroup>
