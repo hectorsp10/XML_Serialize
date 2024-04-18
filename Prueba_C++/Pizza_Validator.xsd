@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Pizzas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name ="Pizza" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name ="Ingredient" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name ="name" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name ="Name" type ="xs:string" use="required"/>
+            <xs:attribute name ="Price" type ="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

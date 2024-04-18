@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Downloads\tinyxml2-master\tinyxml2-master\tinyxml2.cpp" />
-    <ClCompile Include="Data.cpp" />
     <ClCompile Include="Prueba_C++.cpp" />
     <ClCompile Include="Serializer.cpp" />
   </ItemGroup>

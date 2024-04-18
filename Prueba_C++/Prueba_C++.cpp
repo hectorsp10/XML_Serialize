@@ -5,7 +5,7 @@
 
 using namespace tinyxml2;
 
-//converts XML data to normal text
+
 
 int main()
 {

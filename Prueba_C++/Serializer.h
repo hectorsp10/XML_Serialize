@@ -62,7 +62,6 @@ public:
         for (const char* ingredient : ingredients) {
             XMLElement* ingred = xml.NewElement("Ingredient");
             pizza->InsertEndChild(ingred);
-            
             ingred->SetAttribute("name", ingredient);
         }
 
